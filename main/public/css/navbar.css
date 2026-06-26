@@ -1,0 +1,64 @@
+nav{
+    margin-top:25px;
+    padding:18px 35px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:rgba(255,255,255,.75);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.logo{
+    color:var(--accent);
+    font-size:1.6rem;
+    font-weight:800;
+}
+
+.logoimg{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-size:1.5rem;
+    font-weight:700;
+}
+
+.logoimg img{
+    width:52px;
+    height:52px;
+    border-radius:14px;
+    object-fit:cover;
+}
+
+.links{
+    display:flex;
+    gap:35px;
+}
+
+.links a{
+    text-decoration:none;
+    color:var(--text);
+    font-weight:600;
+    transition:.25s;
+}
+
+.links a:hover{
+    color:var(--accent);
+}
+
+.invite-btn{
+    text-decoration:none;
+    padding:12px 24px;
+    border-radius:12px;
+    font-weight:700;
+    color:white;
+    background:linear-gradient(135deg,var(--accent),var(--accent2));
+    transition:.25s;
+}
+
+.invite-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(108,99,255,.3);
+}

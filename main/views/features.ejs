@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Features | Kharat</title>
+
+    <link rel="stylesheet" href="/css/features.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body><%
+const features = [
+    {
+        icon: "🛡️",
+        title: "Moderation",
+        description: "Kick, Ban, Timeout, Warn, Purge and AutoMod."
+    },
+    {
+        icon: "🎫",
+        title: "Tickets",
+        description: "Professional support tickets with transcripts."
+    },
+    {
+        icon: "📜",
+        title: "Logging",
+        description: "Track message edits, deletions, joins and more."
+    },
+    {
+        icon: "🤖",
+        title: "Automation",
+        description: "Auto roles, welcome messages and scheduled tasks."
+    },
+    {
+        icon: "📊",
+        title: "Statistics",
+        description: "Display live server statistics and counters."
+    },
+    {
+        icon: "🎉",
+        title: "Giveaways",
+        description: "Host beautiful giveaways with rerolls."
+    },
+    {
+        icon: "⚙️",
+        title: "Custom Commands",
+        description: "Create custom commands without coding."
+    },
+    {
+        icon: "🔒",
+        title: "Security",
+        description: "Anti-spam, anti-link and anti-raid protection."
+    }
+];
+%>
+
+<div class="container">
+
+    <%- include("partials/navbar") %>
+
+    <section class="feature-hero">
+
+    </section>
+
+    <section class="features-grid">
+
+        <% features.forEach(feature => { %>
+
+            <article class="feature-card">
+
+                <div class="icon"><%= feature.icon %></div>
+
+                <h3><%= feature.title %></h3>
+
+                <p><%= feature.description %></p>
+
+            </article>
+
+        <% }) %>
+
+    </section>
+
+    <section class="stats">
+
+        <div class="stat">
+            <h2>50+</h2>
+            <p>Commands</p>
+        </div>
+
+        <div class="stat">
+            <h2>99.9%</h2>
+            <p>Uptime</p>
+        </div>
+
+        <div class="stat">
+            <h2>24/7</h2>
+            <p>Support</p>
+        </div>
+
+    </section>
+
+    <section class="cta">
+
+        <h2>Ready to upgrade your Discord server?</h2>
+
+        <p>
+            Invite Kharat today and unlock powerful moderation,
+            automation and server management tools.
+        </p>
+
+        <div class="buttons">
+            <a href="/invite" class="primary">Invite Kharat</a>
+            <a href="/dashboard" class="secondary">Dashboard</a>
+        </div>
+
+    </section>
+
+</div>
+</body>
+</html>
