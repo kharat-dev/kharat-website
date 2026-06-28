@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation | Kharat Bot</title>
+
+    <link rel="stylesheet" href="/css/docs.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <div class = "container">
+
+    <%- include("partials/navbar") %>
+
+    <main class="docs-page">
+
+        <header class="hero">
+            <h1>Documentation</h1>
+            <p>
+                Learn how to configure and use Kharat Bot.
+                This documentation will continue to expand and will be more organized with future updates.
+            </p>
+        </header>
+
+        <section>
+            <h2>Getting Started</h2>
+
+            <ol>
+                <li>Invite Kharat Bot to your Discord server.</li>
+                <li>Grant Admin permissions.(more options in future)</li>
+                <li>Configure command prefix. (default is : "<strong>,</strong>")</li>
+                <li>Make sure bot role is high enough </li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Basic Commands</h2>
+
+            <ul>
+                <li><strong>ban</strong> — Permanently bans a member.</li>
+                <li><strong>kick</strong> — Removes a member.</li>
+                <li><strong>timeout</strong> — Temporarily mutes a member.</li>
+                <li><strong>gulag</strong> — Sends a member to the Gulag.</li>
+                <li><strong>forgive</strong> — Removes the Gulag punishment.</li>
+                <li><strong>prefix</strong> — Shows current prefix .</li>
+                <li><strong>cgprefix</strong> — Change the current prefix.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Configuration</h2>
+
+            <p>Configure the moderation system before using punishment commands.</p>
+
+            <ul>
+                <li><strong>gulagrole</strong> — Sets the Gulag role.</li>
+                <li><strong>gulagchannelid</strong> — Sets the Gulag channel.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Permissions</h2>
+
+            <p>
+                Most moderation commands require appropriate Discord permissions.
+                Make sure the bot's role is above the members it moderates.
+            </p>
+        </section>
+
+        <section>
+            <h2>Frequently Asked Questions</h2>
+
+            <h3>How do I change the prefix?</h3>
+            <p>Use the <strong>cgprefix</strong> command.</p>
+
+            <h3>Why can't the bot ban members?</h3>
+            <p>Ensure the bot has the Ban Members permission and its role is higher than the target member.</p>
+
+            <h3>Is bot dashboard available ?</h3>
+            <p>Dashboard for configuring server setting will be available in next update .</p>
+        </section>
+
+        <section>
+            <h2>More Documentation Coming Soon</h2>
+
+            <p>
+                Future releases will include complete command examples,
+                configuration guides, dashboard documentation,
+                and API references.
+            </p>
+        </section>
+
+    </main>
+    </div>
+
+</body>
+</html>

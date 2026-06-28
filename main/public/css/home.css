@@ -4,6 +4,9 @@
     box-sizing:border-box;
     font-family:'Inter',sans-serif;
 }
+html {
+    scrollbar-gutter: stable;
+}
 
 :root{
     --bg:#FFFEB6;
@@ -31,7 +34,7 @@ body{
 ========================= */
 
 .hero{
-    min-height:85vh;
+    min-height:100vh;
     display:flex;
     justify-content:space-between;
     align-items:center;

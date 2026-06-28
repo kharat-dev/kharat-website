@@ -1,4 +1,5 @@
 const express = require('express');
+const router = require('./routes');
 
 const path  = require("path");
 const fs = require("fs");
@@ -14,7 +15,10 @@ const middlewares = new Map();
 app.set('view engine' , 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 
-for(const file of middlewarefiles){
+app.use(require('./routes'));
+
+
+/* for(const file of middlewarefiles){
     const middleware = require(path.join(middlewarepath , file));
     for(const route of middleware){
         if(route.name && route.execute){
@@ -28,7 +32,7 @@ for(const file of middlewarefiles){
 for(const [name , execute] of middlewares){    
 app.use(name , execute);
 }
-
+ */
 
 app.listen(port , () => console.log("server started"));
 

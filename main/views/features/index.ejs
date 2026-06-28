@@ -9,10 +9,7 @@
     <link rel="stylesheet" href="/css/features.css">
     <link rel="stylesheet" href="/css/navbar.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
 </head>
 
 <body><%
@@ -20,49 +17,50 @@ const features = [
     {
         icon: "🛡️",
         title: "Moderation",
-        description: "Kick, Ban, Timeout, Warn, Purge and AutoMod."
+        description: " server  moderation commands.",
+        link: "/commands"
     },
     {
         icon: "🎫",
         title: "Tickets",
-        description: "Professional support tickets with transcripts."
+        description: "coming soon"
     },
     {
         icon: "📜",
         title: "Logging",
-        description: "Track message edits, deletions, joins and more."
+        description: "coming soon"
     },
     {
         icon: "🤖",
         title: "Automation",
-        description: "Auto roles, welcome messages and scheduled tasks."
+        description: "coming soon"
     },
     {
         icon: "📊",
         title: "Statistics",
-        description: "Display live server statistics and counters."
+        description: "coming soon"
     },
     {
         icon: "🎉",
         title: "Giveaways",
-        description: "Host beautiful giveaways with rerolls."
+        description: "coming soon"
     },
     {
         icon: "⚙️",
         title: "Custom Commands",
-        description: "Create custom commands without coding."
+        description: "coming soon"
     },
     {
         icon: "🔒",
         title: "Security",
-        description: "Anti-spam, anti-link and anti-raid protection."
+        description: "coming soon"
     }
 ];
 %>
 
 <div class="container">
 
-    <%- include("partials/navbar") %>
+    <%- include("../partials/navbar") %>
 
     <section class="feature-hero">
 
@@ -70,40 +68,25 @@ const features = [
 
     <section class="features-grid">
 
-        <% features.forEach(feature => { %>
-
-            <article class="feature-card">
-
-                <div class="icon"><%= feature.icon %></div>
-
-                <h3><%= feature.title %></h3>
-
-                <p><%= feature.description %></p>
-
-            </article>
-
-        <% }) %>
+       <% features.forEach(feature => { %>
+    <% if (feature.link) { %>
+        <div class="feature-card">
+            <div class="icon"><%= feature.icon %></div>
+            <a href="<%= feature.link %>" ><h3><%= feature.title %></h3></a>
+            <p><%= feature.description %></p>
+        </div>
+    <% } else { %>
+        <div class="feature-card">
+            <div class="icon"><%= feature.icon %></div>
+            <h3><%= feature.title %></h3>
+            <p><%= feature.description %></p>
+        </div>
+    <% } %>
+<% }) %>
 
     </section>
 
-    <section class="stats">
 
-        <div class="stat">
-            <h2>50+</h2>
-            <p>Commands</p>
-        </div>
-
-        <div class="stat">
-            <h2>99.9%</h2>
-            <p>Uptime</p>
-        </div>
-
-        <div class="stat">
-            <h2>24/7</h2>
-            <p>Support</p>
-        </div>
-
-    </section>
 
     <section class="cta">
 
