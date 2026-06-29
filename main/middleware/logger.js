@@ -2,19 +2,40 @@ const fs = require("fs");
 const path = require("path");
 const { UAParser } = require("ua-parser-js");
 
-module.exports = function logger(req, res, next){
-    console.log(req.method, req.originalUrl);
-    if (req.originalUrl === "/favicon.ico") {
-    return next();
-}
+module.exports = function logger(req, res, next) {
 
-    const parser = new UAParser(req.get("User-Agent"));
+    const ip = req.ip;
+    const ua = req.get("User-Agent") || "";
+
+    // Ignore localhost
+    if (ip === "::1" || ip === "127.0.0.1")
+        return next();
+
+    // Ignore anything except GET
+    if (req.method !== "GET")
+        return next();
+
+    // Ignore favicon
+    if (req.originalUrl === "/favicon.ico")
+        return next();
+
+    // Ignore missing User-Agent
+    if (!ua)
+        return next();
+
+    // Ignore bots, crawlers and health checks
+    if (
+        /bot|spider|crawler|render|uptime|monitor|curl|wget|Go-http-client|python|axios|node-fetch|Postman|insomnia/i.test(ua)
+    )
+        return next();
+
+    const parser = new UAParser(ua);
     const result = parser.getResult();
 
     const log = {
         time: new Date().toISOString(),
 
-        ip: req.ip,
+        ip,
 
         browser: result.browser.name || "Unknown",
         browserVersion: result.browser.version || "Unknown",
