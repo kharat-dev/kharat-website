@@ -1,13 +1,40 @@
-  <nav>
-        <div class="logo">Kharat Bot</div>
+<nav>
 
-        <div class="links">
-            <a href="/">Home</a>
-            <a href="/features">Features</a>
-            <a href="/commands">Commands</a>
-            <a href="/docs">Docs</a>
-            <a href="/support">Support</a>
-        </div>
+    <a href="/" class="logo">
+        Kharat Bot
+    </a>
 
-        <!--<a href="/login" class="invite-btn">Add To Discord</a> -->
-    </nav>
+    <div class="links">
+
+        <a href="/"
+        class="<%= page === 'home' ? 'active' : '' %>">
+            Home
+        </a>
+
+        <a href="/features"
+        class="<%= page === 'features' ? 'active' : '' %>">
+            Features
+        </a>
+
+        <a href="/commands"
+        class="<%= page === 'commands' ? 'active' : '' %>">
+            Commands
+        </a>
+
+        <a href="/docs"
+        class="<%= page === 'docs' ? 'active' : '' %>">
+            Docs
+        </a>
+
+        <a href="/support"
+        class="<%= page === 'support' ? 'active' : '' %>">
+            Support
+        </a>
+
+    </div>
+
+    <!--<a href="/login" class="invite-btn">
+        Add To Discord
+    </a>-->
+
+</nav>
