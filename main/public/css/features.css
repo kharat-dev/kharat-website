@@ -14,6 +14,9 @@
     --text:#232323;
     --muted:#666;
 }
+html {
+    scrollbar-gutter: stable;
+}
 
 body{
     background:linear-gradient(135deg,var(--bg),var(--bg2));
@@ -21,8 +24,7 @@ body{
 }
 
 .container{
-    width:95%;
-    max-width:1400px;
+    width:min(95%,1400px);
     margin:auto;
 }
 

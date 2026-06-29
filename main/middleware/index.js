@@ -1,27 +1,25 @@
 const path  = require('path');
 const fs  = require('fs');
 
-let files ={}
+let middlewares =[]
 
-const routepath = path.join(__dirname , ".." , 'routes');
+const routepath = path.join(__dirname);
     const routefiles = fs.readdirSync(routepath);
     for(const file of routefiles){
-        const name = path.parse(file).name;
-        const route = name === 'home' ? '/' :`/${name}`;
-        files[route] = name;
+
+        if(file === path.basename(__filename)|| file === 'page.js') continue ;
+
+        if(path.extname(file) === '.js'){
+        
+        middlewares.push(require(path.join(routepath , file)));
+        }
 
     }
 
-    
-    const page = function final(req , res , next){
-     
-    res.locals.page = files[req.path] || "" ;
-    
-    next();
-      
-}
+    console.log(middlewares);
 
-module.exports = page ;
+
+module.exports = middlewares;
 
 
 

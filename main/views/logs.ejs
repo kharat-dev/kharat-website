@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visitor Logs</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background:#f4f6fb;
+            padding:40px;
+        }
+
+        h1{
+            text-align:center;
+            margin-bottom:40px;
+        }
+
+        .container{
+            max-width:1200px;
+            margin:auto;
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(380px,1fr));
+            gap:25px;
+        }
+
+        .card{
+            background:white;
+            border-radius:18px;
+            padding:22px;
+            box-shadow:0 8px 25px rgba(0,0,0,.08);
+        }
+
+        .card h2{
+            margin-bottom:15px;
+            color:#6C63FF;
+        }
+
+        .row{
+            display:flex;
+            justify-content:space-between;
+            margin:8px 0;
+            gap:20px;
+        }
+
+        .label{
+            font-weight:bold;
+        }
+
+        .value{
+            color:#555;
+            text-align:right;
+            word-break:break-word;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Website Visitors</h1>
+
+<div class="container">
+
+<% logs.forEach(log => { %>
+
+<div class="card">
+
+<h2><%= log.ip %></h2>
+
+<div class="row">
+<div class="label">Time</div>
+<div class="value"><%= log.time %></div>
+</div>
+
+<div class="row">
+<div class="label">Browser</div>
+<div class="value"><%= log.browser %> <%= log.browserVersion %></div>
+</div>
+
+<div class="row">
+<div class="label">Operating System</div>
+<div class="value"><%= log.os %> <%= log.osVersion %></div>
+</div>
+
+<div class="row">
+<div class="label">Device</div>
+<div class="value"><%= log.device %></div>
+</div>
+
+<div class="row">
+<div class="label">Vendor</div>
+<div class="value"><%= log.deviceVendor %></div>
+</div>
+
+<div class="row">
+<div class="label">Model</div>
+<div class="value"><%= log.deviceModel %></div>
+</div>
+
+<div class="row">
+<div class="label">CPU</div>
+<div class="value"><%= log.cpu %></div>
+</div>
+
+<div class="row">
+<div class="label">Method</div>
+<div class="value"><%= log.method %></div>
+</div>
+
+<div class="row">
+<div class="label">URL</div>
+<div class="value"><%= log.url %></div>
+</div>
+
+<div class="row">
+<div class="label">Language</div>
+<div class="value"><%= log.language %></div>
+</div>
+
+<div class="row">
+<div class="label">Referer</div>
+<div class="value"><%= log.referer %></div>
+</div>
+
+<div class="row">
+<div class="label">Host</div>
+<div class="value"><%= log.host %></div>
+</div>
+
+<div class="row">
+<div class="label">Protocol</div>
+<div class="value"><%= log.protocol %></div>
+</div>
+
+</div>
+
+<% }) %>
+
+</div>
+
+</body>
+</html>

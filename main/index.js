@@ -1,10 +1,7 @@
 const express = require('express');
-const router = require('./routes');
 const page = require('./middleware');
-
 const path  = require("path");
 const fs = require("fs");
-
 
 const app = express();
 const port = 8000 ;
@@ -13,29 +10,20 @@ const middlewarefiles = fs.readdirSync(middlewarepath);
 const middlewares = new Map();
 
 
+app.set("trust proxy", true);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded({ extended: true }));
 
 
 
 
- /*for(const file of middlewarefiles){
-    const middleware = require(path.join(middlewarepath , file));
-    for(const route of middleware){
-        if(route.name && route.execute){
-       middlewares.set(route.name , route.execute) ;
-    }else{
-        console.log("middleware not loaded ");
-    }
-    }
-    
-}
-for(const [name , execute] of middlewares){    
-app.use(name , execute);
+/*for(const file of page){    
+app.use(file);
 }*/
-app.use(page);
+app.use(require('./middleware/page.js'));
 
 app.use(require('./routes'));
 

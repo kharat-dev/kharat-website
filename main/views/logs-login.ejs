@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Admin Login</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f3f5fa;
+}
+
+.login{
+
+    width:380px;
+
+    padding:35px;
+
+    background:white;
+
+    border-radius:18px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+}
+
+h1{
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+    color:#6C63FF;
+
+}
+
+input{
+
+    width:100%;
+
+    padding:14px;
+
+    border:2px solid #ddd;
+
+    border-radius:10px;
+
+    margin-bottom:18px;
+
+    outline:none;
+
+}
+
+input:focus{
+
+    border-color:#6C63FF;
+
+}
+
+button{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#6C63FF;
+
+    color:white;
+
+    font-size:1rem;
+
+    cursor:pointer;
+
+}
+
+button:hover{
+
+    opacity:.9;
+
+}
+
+.error{
+
+    color:red;
+
+    text-align:center;
+
+    margin-bottom:15px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="login">
+
+<h1>Admin Login</h1>
+
+<% if(typeof error !== "undefined"){ %>
+
+<p class="error"><%= error %></p>
+
+<% } %>
+
+<form method="POST">
+
+<input
+type="password"
+name="password"
+placeholder="Enter Password"
+required
+>
+
+<button type="submit">
+Login
+</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
